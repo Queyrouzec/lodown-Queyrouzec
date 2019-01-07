@@ -1,0 +1,29 @@
+{
+  "name": "lodown-queyrouzec",
+  "version": "3.10.10",
+  "description": "lodown library",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "istanbul cover _mocha --test/ -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Queyrouzec/lodown-Queyrouzec.git"
+  },
+  "author": "Steven Queyrouze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Queyrouzec/lodown-Queyrouzec/issues"
+  },
+  "homepage": "https://github.com/Queyrouzec/lodown-Queyrouzec#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "i": "^0.3.6",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.2"
+  }
+}
