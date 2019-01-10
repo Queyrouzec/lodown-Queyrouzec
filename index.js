@@ -33,6 +33,7 @@
  *      identity(12); // returns 12
  */
 let identity = a => a;
+module.exports.identity = identity;
 
 
 /**Checks the type of the value and returns the type as a string. It can be any of the following:
@@ -60,6 +61,7 @@ let typeOf = val => {
     // test and return the rest of the value types
     return typeof val;
 };
+module.exports.typeOf = typeOf;
 
 
 /**Grabs a set of values from the start of an array and returns them. Has two
@@ -83,8 +85,8 @@ let first = (array, num) => {
     if (num === undefined || typeof num !== 'number') return arr[0];
     // returns the number of items equal to "num"
     return arr.slice(0, num);
-    
 };
+module.exports.first = first;
 
  
 /** Grabs a specified amount of the last values in an array and returns them as an array.
@@ -109,6 +111,7 @@ let first = (array, num) => {
     // return the number of elements equal to "num" from the end of "arr"
     return arr.slice(arr.length - num);
 };
+module.exports.last = last;
 
 
 /** Gets the first index of a value in an array and returns it. If there is no value in the array, it returns a -1
@@ -130,6 +133,7 @@ let indexOf = (arr, val) => {
     return -1;
 	
 };
+module.exports.indexOf = indexOf;
 
 
 /** Test to see if an array contains a value.
@@ -149,6 +153,7 @@ let contains = (arr, val) => {
     }
     return false;
 };
+module.exports.contains = contains;
 
 
 /** Runs a function over each value in an array or object. Can produce side-effects.
@@ -180,8 +185,8 @@ let each = (coll, func) => {
             func(coll[i], i, coll);
         }
     }
-    
 };
+module.exports.each = each;
 
 
 /** Returns a new array with no copies.
@@ -202,6 +207,7 @@ let each = (coll, func) => {
     }
     return arr;
 };
+module.exports.unique = unique;
 
 
 /** Returns a new array with only the values that passed a test.
@@ -235,8 +241,8 @@ let filter = (array, func) => {
                                         if(func(ele, ind, array)) arr.push(array[ind]);
                                       });
     return arr;
-    
 };
+module.exports.filter = filter;
 
 
 /** Returns an array with all values that fail a test
@@ -263,11 +269,10 @@ let filter = (array, func) => {
  *      
  */
 let reject = (arr, func) => { 
-
     // inverses the function passed through "filster" to accept the oppisite of the test function
     return filter(arr, function(e,i) {return !func(e,i,arr)});
-
 };
+module.exports.reject = reject;
 
 
 /** Returns two arrays with values that passed a test and values that failed a test.
@@ -293,11 +298,10 @@ let reject = (arr, func) => {
  *      // returns [[3, 6], [true, "hi", null]]
  */
 let partition = (arr, func) => { 
-    
     // returns "filter" results, then "reject" results
     return [filter(arr, func), reject(arr, func)];
-    
 };
+module.exports.partition = partition;
 
 
 /** Runs a function on an array/object and returns a new array/object
@@ -316,7 +320,6 @@ let partition = (arr, func) => {
  *      each(array1, (element, index, array) => array.push(element)) // returns [2,3,4,5,6,2,3,4,5,6]
  */
 let map = (coll, func) => {
-    
     // makes a new array called "newColl" to be returned at the end of the program
     var newColl = [];
     if(Array.isArray(coll)) {
@@ -329,8 +332,8 @@ let map = (coll, func) => {
     }
     // run "newColl" through each and return it
     return newColl;
-    
 };
+module.exports.map = map;
 
 
 /** Grabs the value of a property from an array of objects.
@@ -353,6 +356,7 @@ let pluck = (arr, prop) => {
     return retArr;
     
 };
+module.exports.pluck = pluck;
 
 
 /** Checks to see if every element in an object/array passes a test.
@@ -372,7 +376,6 @@ let pluck = (arr, prop) => {
  *      every(object1, (value, key, object) => (value % 6 === 0)) // returns false;
  */
 let every = (coll, func) => { 
-    
     // holds end result
     var bool = true;
     // if there is no function test to see if the double bang of the elements of "coll" are true. If one isn't returns false.
@@ -385,8 +388,8 @@ let every = (coll, func) => {
         if (!func(e,i,a)) bool = false;
     });
     return bool;
-    
 };
+module.exports.every = every;
 
 
 /** Returns true if one value in an array/object returns true
@@ -413,6 +416,7 @@ let some = (coll, func) => {
     // test if any element in coll passes the test.
     return !every(coll, (e,i,a) => !func(e,i,a));
 };
+module.exports.some = some;
 
 
 /** brings an array down to one element using an incramentor
@@ -446,6 +450,7 @@ let reduce = (arr, func, seed) => {
     }
     return seed;
 };
+module.exports.reduce = reduce;
 
 
 /** combinds all arguments into the first argument.
@@ -466,3 +471,4 @@ let extend = (obj1, ...obj2) => { //////////////////////////////////////////////
     }
     return obj1;
 };
+module.exports.extend = extend;
