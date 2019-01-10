@@ -1,6 +1,6 @@
 {
   "name": "lodown-queyrouzec",
-  "version": "3.10.10",
+  "version": "1.0.0",
   "description": "lodown library",
   "main": "index.js",
   "directories": {
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Queyrouzec/lodown-Queyrouzec.git"
   },
-  "author": "Steven Queyrouze",
+  "author": "Steven C. Queyrouze",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Queyrouzec/lodown-Queyrouzec/issues"
